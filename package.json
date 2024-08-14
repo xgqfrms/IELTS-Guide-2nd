@@ -1,7 +1,7 @@
 {
-  "name": "github-fe-oss-project-template",
-  "version": "1.0.0",
-  "description": "github fe oss project template",
+  "name": "IELTS-Guide-2th",
+  "version": "0.0.1",
+  "description": "雅思考试官方指南（第2版）音频、视频资源",
   "main": "src/index.ts",
   "scripts": {
     "dev": "tsc -p tsconfig.json",
@@ -11,20 +11,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xgqfrms/github-fe-oss-project-template.git"
+    "url": "git+https://github.com/xgqfrms/IELTS-Guide-2th.git"
   },
   "keywords": [
-    "typescript",
-    "github",
-    "actions",
-    "template"
+    "IELTS",
+    "github"
   ],
   "author": "xgqfrms",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xgqfrms/github-fe-oss-project-template/issues"
+    "url": "https://github.com/xgqfrms/IELTS-Guide-2th/issues"
   },
-  "homepage": "https://github.com/xgqfrms/github-fe-oss-project-template#readme",
+  "homepage": "https://github.com/xgqfrms/IELTS-Guide-2th#readme",
   "devDependencies": {
     "@types/dedent": "^0.7.0",
     "@types/node": "^18.7.3",

@@ -19,7 +19,7 @@
     "editor.formatOnSave": false,
     "editor.formatOnPaste": false,
     "editor.renderWhitespace": "all",
-    "editor.fontSize": 14,
+    "editor.fontSize": 16,
     "editor.tabSize": 2,
     "editor.multiCursorModifier": "alt",
     "editor.wordWrap": "on",
@@ -75,5 +75,8 @@
     "html.format.extraLiners": "",
     "html.format.enable": false,
     "html.format.contentUnformatted": "body, div, section, script, pre,code,textarea",
+    "cSpell.words": [
+        "IELTS"
+    ],
 
 }
