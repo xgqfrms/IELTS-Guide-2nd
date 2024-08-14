@@ -1,0 +1,17 @@
+name: 'github dev action'
+author: 'xgqfrms'
+description: 'github dev action'
+branding:
+  icon: 'type'
+  color: 'blue'
+
+inputs:
+  name:
+    description: 'github user name'
+    required: false
+    default: 'xgqfrms'
+
+runs:
+  using: 'node16'
+  main: '../dist/dev.js'
+

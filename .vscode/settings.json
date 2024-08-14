@@ -1,0 +1,79 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/jspm_packages": true,
+        "**/node_modules": true,
+        "**/.zip": true,
+        "**/.sh": true
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true
+    },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true
+    },
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false,
+    "editor.renderWhitespace": "all",
+    "editor.fontSize": 14,
+    "editor.tabSize": 2,
+    "editor.multiCursorModifier": "alt",
+    "editor.wordWrap": "on",
+    "editor.insertSpaces": true,
+    "files.encoding": "utf8",
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+    // "[typescript]": {
+    //     "editor.formatOnSave": false,
+    //     "editor.formatOnPaste": false
+    // },
+    "[javascript]": {
+        "editor.formatOnSave": false,
+        "editor.formatOnPaste": false,
+        "editor.renderWhitespace": "all",
+        "editor.foldingStrategy": "indentation"
+        // "editor.foldingStrategy": "auto"
+    },
+    "[markdown]": {
+        "editor.formatOnSave": false,
+        "editor.renderWhitespace": "all",
+        "editor.acceptSuggestionOnEnter": "off"
+    },
+    "[html]": {
+        "editor.formatOnSave": false,
+        "editor.formatOnPaste": false,
+        "editor.renderWhitespace": "all",
+        "editor.acceptSuggestionOnEnter": "off"
+    },
+    "files.associations": {
+        "*.jsx": "javascriptreact",
+        "*.js": "javascriptreact"
+    },
+    "editor.snippetSuggestions": "top",
+    // When enabled, typing /** triggers documentation automatically.
+    "docthis.automaticForBlockComments": true,
+    // When enabled, type information is added to comment tags.
+    "docthis.includeTypes": true,
+    // When enabled, memberOf information is added to comment tags on class members.
+    "docthis.includeMemberOfOnClassMembers": true,
+    // When enabled, memberOf information is added to comment tags on interface members.
+    "docthis.includeMemberOfOnInterfaceMembers": true,
+    // When enabled, JSDoc comments for functions and methods will include @description.
+    "docthis.includeDescriptionTag": true,
+    // When enabled, hungarian notation will be used as a type hint.
+    "docthis.enableHungarianNotationEvaluation": true,
+    // When enabled, will use names of params & methods as type hints.
+    "docthis.inferTypesFromNames": true,
+    // When enabled, will add the @author tag.
+    "docthis.includeAuthorTag": true,
+    // When docthis.includeAuthorTag is enabled, will add @author tag with this value.
+    "docthis.authorName": "xgqfrms",
+    // HTML & overwrite User settings.json
+    "html.format.extraLiners": "",
+    "html.format.enable": false,
+    "html.format.contentUnformatted": "body, div, section, script, pre,code,textarea",
+
+}

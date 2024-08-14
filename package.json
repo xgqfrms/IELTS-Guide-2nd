@@ -1,0 +1,38 @@
+{
+  "name": "github-fe-oss-project-template",
+  "version": "1.0.0",
+  "description": "github fe oss project template",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "cd ./dist && node ./index.js && exit 0",
+    "bug": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xgqfrms/github-fe-oss-project-template.git"
+  },
+  "keywords": [
+    "typescript",
+    "github",
+    "actions",
+    "template"
+  ],
+  "author": "xgqfrms",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xgqfrms/github-fe-oss-project-template/issues"
+  },
+  "homepage": "https://github.com/xgqfrms/github-fe-oss-project-template#readme",
+  "devDependencies": {
+    "@types/dedent": "^0.7.0",
+    "@types/node": "^18.7.3",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@actions/core": "^1.9.1",
+    "@actions/github": "^5.0.3",
+    "dedent": "^0.7.0"
+  }
+}

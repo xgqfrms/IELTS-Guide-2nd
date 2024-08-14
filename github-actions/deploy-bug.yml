@@ -1,0 +1,19 @@
+# deploy.yml 是保留的特殊文件，写法与一般的不同
+# Property description is not allowed.yaml-schema: Deployer Recipe ❌ (name, author, description, inputs, runs ...)
+name: 'github deploy action'
+author: 'xgqfrms'
+description: 'github deploy action'
+branding:
+  icon: 'type'
+  color: 'blue'
+
+# ✅ 定义可以接收的输入参数名称: name ghToken
+inputs:
+  name:
+    description: 'github user name'
+    required: false
+    default: 'xgqfrms'
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

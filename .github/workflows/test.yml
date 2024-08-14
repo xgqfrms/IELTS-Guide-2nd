@@ -1,0 +1,54 @@
+name: Test
+# triggers
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+#
+jobs:
+  run-action:
+    name: Run action ✅
+    runs-on: ubuntu-latest
+    #
+    steps:
+      - uses: actions/checkout@v2
+      #
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+      #
+      - name: Install dependencies
+        run: npm ci
+      #
+      - name: Build
+        run: npm run build
+      # *.yml 文件，自动匹配 action.yml
+      - name: Run default Action ⭐️
+        # ./ 匹配项目根目录下的所有 *.yml ❌
+        # uses: ['./action.yml', './dev.yml', './custom-deploy.yml']
+        # uses: ./dev.yml
+        # uses: ./custom-deploy.yml
+        # uses: ./action.yml
+        # Error: Can't find 'action.yml', 'action.yaml' or 'Dockerfile' under '/home/runner/work/github-fe-oss-project-template/github-fe-oss-project-template/action.yml'. Did you forget to run actions/checkout before running your local action?
+        uses: ./
+        # 使用 with 传递参数给 action.yml
+        with:
+          # name: 'xgqfrms/webgeeker'
+          name: 'xgqfrms-github'
+          # 关键字 GITHUB_TOKEN, GitHub 会自动注入，无需手动定义该 secrets；✅
+          ghToken: ${{secrets.GITHUB_TOKEN}}
+      # run other actions
+      - name: Run dev Action ⭐️⭐️
+        uses: ./dev
+        with:
+          name: 'xgqfrms-github'
+      - name: Run custom-deploy Action ⭐️⭐️⭐️
+        uses: ./custom-deploy
+        with:
+          name: 'xgqfrms-github'

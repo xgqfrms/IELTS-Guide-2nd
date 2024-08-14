@@ -1,0 +1,16 @@
+name: 'github custom-deploy action'
+author: 'xgqfrms'
+description: 'github custom-deploy action'
+branding:
+  icon: 'type'
+  color: 'blue'
+
+inputs:
+  name:
+    description: 'github user name'
+    required: false
+    default: 'xgqfrms'
+
+runs:
+  using: 'node16'
+  main: '../dist/deploy.js'

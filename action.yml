@@ -1,0 +1,21 @@
+name: 'github fe oss project template'
+author: 'xgqfrms'
+description: 'github front-end open source software project template'
+# fix: Improve your Action by adding labels for icon and color.
+branding:
+  icon: 'type'
+  color: 'blue'
+
+# ✅ 定义可以接收的输入参数名称: name ghToken
+inputs:
+  name:
+    description: 'github user name'
+    required: false
+    default: 'xgqfrms'
+  ghToken:
+    description: 'GitHub access token'
+    required: false
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
