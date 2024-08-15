@@ -1,5 +1,5 @@
 {
-  "name": "IELTS-Guide-2th",
+  "name": "IELTS-Guide-2nd",
   "version": "0.0.1",
   "description": "雅思考试官方指南（第2版）音频、视频资源",
   "main": "src/index.ts",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xgqfrms/IELTS-Guide-2th.git"
+    "url": "git+https://github.com/xgqfrms/IELTS-Guide-2nd.git"
   },
   "keywords": [
     "IELTS",
@@ -20,9 +20,9 @@
   "author": "xgqfrms",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xgqfrms/IELTS-Guide-2th/issues"
+    "url": "https://github.com/xgqfrms/IELTS-Guide-2nd/issues"
   },
-  "homepage": "https://github.com/xgqfrms/IELTS-Guide-2th#readme",
+  "homepage": "https://github.com/xgqfrms/IELTS-Guide-2nd#readme",
   "devDependencies": {
     "@types/dedent": "^0.7.0",
     "@types/node": "^18.7.3",
