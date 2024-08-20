@@ -69,13 +69,19 @@ const treeGenerator = async (results = [], folderName = rootFolder) => {
       // }
       // console.log(stats.isDirectory());
       if(stats.isDirectory()) {
-        console.log(`🗂️ folderName =`, fileName);
+        // console.log(`🗂️ folderName =`, fileName);
         await treeGenerator(results, pathName)
       } else {
-        console.log(`📂 fileName =`, fileName)
-        await fs.appendFile(rootFolder + `tree.md`, pathName + `\n`, err => {
+        // console.log(`📂 fileName =`, fileName)
+        const relativePath = pathName.replace(`/Users/xgqfrms-mm/Documents/github/IELTS-Guide-2th/docs/`, ``);
+        const aLink = `<a href="https://ielts-guide-2nd.xgqfrms.xyz/${relativePath}">${relativePath}</a><br />\n`
+        //
+        await fs.appendFile(rootFolder + `tree.md`, aLink, err => {
           //
         });
+        // await fs.appendFile(rootFolder + `tree.md`, pathName + `\n`, err => {
+        //   //
+        // });
         results.push(pathName);
       }
     });
