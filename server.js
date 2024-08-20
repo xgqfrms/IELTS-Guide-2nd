@@ -75,7 +75,24 @@ const treeGenerator = async (results = [], folderName = rootFolder) => {
         // console.log(`📂 fileName =`, fileName)
         // const relativePath = encodeURIComponent(pathName.replace(`/Users/xgqfrms-mm/Documents/github/IELTS-Guide-2th/docs/`, ``));
         const relativePath = pathName.replace(`/Users/xgqfrms-mm/Documents/github/IELTS-Guide-2th/docs/`, ``);
-        const aLink = `<a href="https://ielts-guide-2nd.xgqfrms.xyz/${encodeURIComponent(relativePath)}">${relativePath}</a><br />\n`
+        let url = `https://ielts-guide-2nd.xgqfrms.xyz/${encodeURIComponent(relativePath)}`;
+        switch (relativePath) {
+          case `《雅思考试官方指南》（第2版）/视频：口语考试实况录像/01 Speaking Sample 1.mp4`:
+            url = `https://www.bilibili.com/video/BV1PbeueyEuE/`;
+            break;
+          case `《雅思考试官方指南》（第2版）/视频：口语考试实况录像/02 Speaking Sample 2.mp4`:
+            url = `https://www.bilibili.com/video/BV15ueuetEKJ/`;
+            break;
+          case `《雅思考试官方指南》（第2版）/视频：口语考试实况录像/03 Speaking Sample 3.mp4`:
+            url = `https://www.bilibili.com/video/BV1PbeueyEuE/`;
+            break;
+          case `《雅思考试官方指南》（第2版）/视频：口语考试实况录像/04 Speaking Sample 4.mp4`:
+            url = `https://www.bilibili.com/video/BV1hVeueRE42/`;
+            break;
+          // default:
+          //   break;
+        }
+        const aLink = `<a href="${url}" target="_blank">${relativePath}</a><br />\n`;
         //
         await fs.appendFile(rootFolder + `tree.md`, aLink, err => {
           //
