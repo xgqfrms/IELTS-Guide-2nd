@@ -1,24 +1,51 @@
-import fs, {stat} from 'node:fs';
+// import fs, {stat} from 'node:fs';
+import fs from 'node:fs';
 import path from 'node:path';
-
-
 
 const rootFolder = '/Users/xgqfrms-mm/Documents/github/IELTS-Guide-2th/docs/《雅思考试官方指南》（第2版）';
 
-
-const isFile = fileName => {
-  return fs.lstatSync(fileName).isFile() || false;
-};
-const isFolder = fileName => {
-  return fs.lstatSync(fileName).isDirectory() || false;
-};
-
 try {
+  let treeFilePath = rootFolder + `tree.md`;
+  if (!fs.existsSync(treeFilePath)) {
+    fs.writeFileSync(treeFilePath, ``, err => {
+      // init
+    });
+  } else {
+    fs.writeFileSync(treeFilePath, ``, err => {
+      // clear
+    });
+  }
+  // await fs.appendFile(rootFolder + `tree.md`, content);
+  // fs.writeFile(rootFolder + `tree.md`, content, err => {
+  //   if (err) {
+  //     console.error(err);
+  //   } else {
+  //     // file written successfully
+  //   }
+  // });
+} catch (err) {
+  console.error(err);
+}
+
+
+// const isFile = fileName => {
+//   return fs.lstatSync(fileName).isFile() || false;
+// };
+// const isFolder = fileName => {
+//   return fs.lstatSync(fileName).isDirectory() || false;
+// };
+
+const results = [];
+
+const treeGenerator = async (results = [], folderName = rootFolder) => {
   // 读取文件夹
-  fs.readdirSync(rootFolder).map(fileName => {
-    console.log(`❓ fileName =`, fileName);
-    const pathName = path.join(rootFolder, fileName);
-    stat(pathName, (err, stats) => {
+  console.log(`🚀 folderName =`, folderName);
+  await fs.readdirSync(folderName).map(fileName => {
+    // console.log(`❓ fileName =`, fileName);
+    // path
+    const pathName = path.join(folderName, fileName);
+    // stat(pathName, (err, stats) => {
+    fs.stat(pathName, async (err, stats) => {
       // console.log(stats);
       // Stats {
       //   dev: 16777220,
@@ -40,7 +67,17 @@ try {
       //   ctime: 2024-08-13T18:00:08.014Z,
       //   birthtime: 2024-08-13T17:29:50.955Z
       // }
-      console.log(stats.isDirectory());
+      // console.log(stats.isDirectory());
+      if(stats.isDirectory()) {
+        console.log(`🗂️ folderName =`, fileName);
+        await treeGenerator(results, pathName)
+      } else {
+        console.log(`📂 fileName =`, fileName)
+        await fs.appendFile(rootFolder + `tree.md`, pathName + `\n`, err => {
+          //
+        });
+        results.push(pathName);
+      }
     });
     // if(isFolder(fileName)) {
     //   console.log(`🗂️ folderName =`, fileName)
@@ -54,18 +91,18 @@ try {
     // }
     // let temp = path.join(folderPath, fileName);
   });
+}
+
+try {
+  await treeGenerator(results, rootFolder);
+  console.log(`results =`, results);
 } catch (err) {
   console.error(`error ❌ =`, err);
 }
 
 
-// try {
-//   if (!fs.existsSync(rootFolder)) {
-//     fs.mkdirSync(folderName);
-//   }
-// } catch (err) {
-//   console.error(err);
-// }
+
+
 
 
 
