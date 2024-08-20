@@ -73,8 +73,9 @@ const treeGenerator = async (results = [], folderName = rootFolder) => {
         await treeGenerator(results, pathName)
       } else {
         // console.log(`📂 fileName =`, fileName)
+        // const relativePath = encodeURIComponent(pathName.replace(`/Users/xgqfrms-mm/Documents/github/IELTS-Guide-2th/docs/`, ``));
         const relativePath = pathName.replace(`/Users/xgqfrms-mm/Documents/github/IELTS-Guide-2th/docs/`, ``);
-        const aLink = `<a href="https://ielts-guide-2nd.xgqfrms.xyz/${relativePath}">${relativePath}</a><br />\n`
+        const aLink = `<a href="https://ielts-guide-2nd.xgqfrms.xyz/${encodeURIComponent(relativePath)}">${relativePath}</a><br />\n`
         //
         await fs.appendFile(rootFolder + `tree.md`, aLink, err => {
           //
@@ -101,7 +102,7 @@ const treeGenerator = async (results = [], folderName = rootFolder) => {
 
 try {
   await treeGenerator(results, rootFolder);
-  console.log(`results =`, results);
+  // console.log(`results =`, results);
 } catch (err) {
   console.error(`error ❌ =`, err);
 }
