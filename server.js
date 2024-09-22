@@ -34,10 +34,10 @@ const treeFlatRecursiveTraversal = async (folderName = rootFolder) => {
             url = `https://www.bilibili.com/video/BV1PbeueyEuE/`;
             break;
           case `《雅思考试官方指南》（第2版）/视频：口语考试实况录像/02 Speaking Sample 2.mp4`:
-            url = `https://www.bilibili.com/video/BV15ueuetEKJ/`;
+            url = `https://www.bilibili.com/video/BV1kDeMe6ECZ/`;
             break;
           case `《雅思考试官方指南》（第2版）/视频：口语考试实况录像/03 Speaking Sample 3.mp4`:
-            url = `https://www.bilibili.com/video/BV1PbeueyEuE/`;
+            url = `https://www.bilibili.com/video/BV15ueuetEKJ/`;
             break;
           case `《雅思考试官方指南》（第2版）/视频：口语考试实况录像/04 Speaking Sample 4.mp4`:
             url = `https://www.bilibili.com/video/BV1hVeueRE42/`;
